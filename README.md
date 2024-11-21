@@ -19,6 +19,7 @@
   
 - removing some special characters, that confuse the regex rules
     -  The preprocessing can be adapted to the requirements of the data as required
+ 
 
 The second one - "classification function" - is the actual string-matching function. It takes the receipt data as input (in form of a dataframe) and matches each product row with the cpi-data. It returns a dataframe with the input and the (in case it findes one) match and the corresponding coicop. It requires the following packages:
 
