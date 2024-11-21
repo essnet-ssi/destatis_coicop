@@ -26,7 +26,12 @@ The second one - "classification function" - is the actual string-matching funct
  - tidyverse (package ecosystem)
  - stringdist
  - reticulate
+ - tictoc
  - difflip (python package - that is loaded into R)
- - ... 
 
+ - R-Version: ...
+
+
+
+Mit welchen R-Verionen und Paletversionen ergänzen
 
