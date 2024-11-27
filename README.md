@@ -23,15 +23,12 @@
 
 The second one - "classification function" - is the actual string-matching function. It takes the receipt data as input (in form of a dataframe) and matches each product row with the cpi-data. It returns a dataframe with the input and the (in case it findes one) match and the corresponding coicop. It requires the following packages:
 
- - tidyverse (package ecosystem)
- - stringdist
- - reticulate
- - tictoc
- - difflip (python package - that is loaded into R)
+ - R version 4.1.2 (2021-11-01)
+ - tidyverse version 2.0.0
+ - stringdist version 0.9.10
+ - reticulate version 1.32.0
+ - tictoc version 1.2
+ - data.table version 1.15.4 
+ - difflip (python 3.8 package - that is loaded into R)
 
- - R-Version: ...
-
-
-
-Mit welchen R-Verionen und Paletversionen ergänzen
-
+ 
