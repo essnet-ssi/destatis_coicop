@@ -31,4 +31,7 @@ The second one - "classification function" - is the actual string-matching funct
  - data.table version 1.15.4 
  - difflip (python 3.8 package - that is loaded into R)
 
+Copyright (c) [2024] [Destatis]
+Licensed under the EUPL v. 1.2 or later. See the LICENSE file for details.
+
  
