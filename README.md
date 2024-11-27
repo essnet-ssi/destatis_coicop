@@ -21,6 +21,7 @@
     -  The preprocessing can be adapted to the requirements of the data as required
  
 
+
 The second one - "classification function" - is the actual string-matching function. It takes the receipt data as input (in form of a dataframe) and matches each product row with the cpi-data. It returns a dataframe with the input and the (in case it findes one) match and the corresponding coicop. It requires the following packages:
 
  - R version 4.1.2 (2021-11-01)
@@ -30,6 +31,8 @@ The second one - "classification function" - is the actual string-matching funct
  - tictoc version 1.2
  - data.table version 1.15.4 
  - difflip (python 3.8 package - that is loaded into R)
+
+The scripts can be found in the brance scripts.
 
 Copyright (c) [2024] [Destatis]
 Licensed under the EUPL v. 1.2 or later. See the LICENSE file for details.
