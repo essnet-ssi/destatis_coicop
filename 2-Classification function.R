@@ -1,4 +1,7 @@
 # this script describes the string-matching-function in R
+library(fastTextR)
+#load the fasttext-model 
+model <- ft_load("path/to/your/fasttext/model.bin")
 
 artname_to_coicop_reduced <- function(rec){
   
@@ -14,6 +17,7 @@ artname_to_coicop_reduced <- function(rec){
   library(reticulate)
   library(tictoc)
   library(data.table)
+  library(fastTextR)
   # difflib from Python is used for fuzzy matching
   difflib_from_python <- reticulate::import("difflib")
   
@@ -69,6 +73,16 @@ artname_to_coicop_reduced <- function(rec){
     filter_df(tokenized_string, dat_joined)
   }
   
+  #Coicop prediction function it returns just the predicted coicop or an empty string in case the confidence of the classification is lower than the threshold we define in the function
+  predict_coicop <- function(article_name_rec, model, threshold){
+    model_prediction <- model$predict(article_name_rec)
+    if(model_prediction$prob[1] >= threshold){
+      return(model_prediction$label %>% str_extract("\\d+"))
+    } else{
+      return("")
+    }
+    
+  }
   
   for (i in seq_along(rec$article_name)) {
     
@@ -417,8 +431,18 @@ artname_to_coicop_reduced <- function(rec){
       
       
     }
-
-    if(df$art_name_match[i] == ""){
+    
+    #Predict a coicop for the give product and asign it to the output dataframe in case the confidence of the model is higher or equal than 0.95
+    predicted_coicop <- predict_coicop(article_name_rec, model, threshold = 0.95)
+    if(predicted_coicop != "" & df$coicop[i] == ""){
+      df$art_name_match[i] <- ""
+      df$coicop[i] <- predicted_coicop
+      df$art_name[i] <- article_name_rec
+      df$matching_source[i] <- "fasttext"
+    }
+    
+    #das hier im Github anpassen
+    if(df$coicop[i] == ""){
       
       df$art_name_match[i] <- ""
       df$art_name[i] <- article_name_rec
