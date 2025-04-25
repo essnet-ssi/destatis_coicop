@@ -59,7 +59,7 @@ This script defines the function that performes the stringmatching in combinatio
 
 The matching function follows the concept displayed in this Plot. There are three main step that are hierachially ordered:
 
-![image](https://github.com/user-attachments/assets/68ce4bd2-7fa5-431e-857e-a1b1c31386aa)
+![Flowchart Template (8)](https://github.com/user-attachments/assets/19e1be52-f416-4fd0-bb9b-88951ef215b9)
 
 
 In case we detect a shop on the current receipt we apply the matching over shop-filtered cpi-data. If there is no match on the shop-filtered corpus, we go back to the first step and apply the matching over the complete cpi-corpus. In case we couldnt detect a shop, we apply the matching dirtectly over the complete cpi corpus. The diffent substeps work like displayed in the following flowcharts:
@@ -94,7 +94,6 @@ In case we detect a shop on the current receipt we apply the matching over shop-
 
 ## Flowchart
 
-![Flowchart Template (8)](https://github.com/user-attachments/assets/19e1be52-f416-4fd0-bb9b-88951ef215b9)
 
 
 
