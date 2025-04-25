@@ -94,8 +94,7 @@ In case we detect a shop on the current receipt we apply the matching over shop-
 
 ## Flowchart
 
-![Flowchart Template (7)](https://github.com/user-attachments/assets/8bc72184-06be-41ff-beee-eb72ed9f0bbe)
-
+![Flowchart Template (8)](https://github.com/user-attachments/assets/19e1be52-f416-4fd0-bb9b-88951ef215b9)
 
 
 
