@@ -20,7 +20,7 @@ The matching pipeline consists out of two scripts `load_and_preprocess_data.R` a
 
 ### `load_and_preprocess_data.R`
 
-  This Script servers three main purposes:
+  As CPI data differs from country to country, preprocessing is only vaguely indicated here, as each country will have to specifically address the specific requirements of their own data during preprocessing. Besides will have to server three main purposes:
 - loading the cpi- and receipt-data
 - selecting and renaming the colums, so that the matching function can process the data
   -  The renaming of the columns is very important because the matching function explicitily calls columns from cpi- and the receipt data.
