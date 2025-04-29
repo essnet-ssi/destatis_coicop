@@ -10,7 +10,7 @@
   - [str_which](#str_which)
   - [stringsim](#stringsim)
   - [str_split](#str_split)
-- [Flowchart](#Flowchart)
+
 
 
 
@@ -92,7 +92,6 @@ In case we detect a shop on the current receipt we apply the matching over shop-
 
   - The procedure for the str_split method is similar to the procedure for str_which, but there is another process upstream of it. The first step here is to tokenize the product description of the receipt (at the “word level”) or split it into different substrings. The string is split based on various characteristics. These are: spaces, (double) periods, commas, dashes or minus signs. In addition, substrings that have a string length of less than or equal to 2 are excluded, as these usually do not lead to any gain in knowledge or are even the reason for a missing match. A string such as “rücker Käse Natur” becomes three substrings “rücker”, “Käse” and “Natur”. Starting with the first substring, the search corpus is now gradually reduced. With str_which() all strings are determined that contain the first substring, in the example “rücker”. The already reduced search corpus is then reduced again with str_which by removing all strings that contain the second substring, in the example “Käse”. This procedure is repeated until the nth substring. When the nth substring is reached, we get a vector with potential matches from which we can extract a meaningful COICOP. So far, the first element in the vector of potential matches has been used as the match. A way needs to be added here that identifies the best match.
 
-## Flowchart
 
 
 
